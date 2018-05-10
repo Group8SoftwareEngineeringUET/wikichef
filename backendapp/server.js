@@ -7,11 +7,11 @@ var app = express();
 app.listen(3000);
 
 app.set("view engine","ejs");
-app.set("views","../frontend/ejs/");
-
+app.set('views', __dirname + '../frontend/ejs/')
+app.use(express.static('../frontend/'))
 app.get("/wikichef/", function(req,res){
 	res.render("TrangChu");
-});
+});	
 //var search= require("./search.js");
 var bodyParser = require('body-parser');
 var urlencodedParser=bodyParser.urlencoded({extended:false});

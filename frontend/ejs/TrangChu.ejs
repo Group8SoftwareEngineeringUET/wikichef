@@ -4,8 +4,10 @@
 <title>Wiki Chef</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <link rel="stylesheet" type="text/css" href="../css/food.css">
 <link rel="stylesheet" type="text/css" href="../css/login.css">
+<link rel="stylesheet" type="text/css" href="../css/search.css">
 </head>
 <body> 
 <div class="container">
@@ -29,39 +31,25 @@
 	</section>
 	<section id="blog">
 		<div class="allpost row col-md-12">
-			<div class="col-md-5">
-				<ul>
-				  <li>Coffee</li>
-				  <li>Tea</li>
-				  <li>Milk</li>
-				</ul>
-			</div>
+			
 			<div class="col-md-4">
-				<form action="/wikichef/search" role="search" class="search-form" method="post">
-						<input type="search" name="q" class="search-text" placeholder="Search..." autocomplete="off">
-						<input type="submit" value="Tim" class="search-submit"> 
-
+				<form method="post" class="search-form" action="/wikichef/search">
+				  <input  type="text" placeholder="Search.." name="search">
+				  <button type="submit"><i class="fa fa-search"></i></button>
 				</form>
 			</div>
-			<div class="col-md-1">
-				<div class="user-profile">
-					<i class="fa fa-facebook"></i>
-				</div>
-			</div>	
+
 
 			<div class="col-md-2">
 				<div class="btlogin">
-					<button class="login" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-					<button class="signup" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Signup</button>
+					<button class="login" onclick="document.getElementById('id01').style.display='block'">Login</button>
+					<button class="signup" onclick="document.getElementById('id02').style.display='block'">Signup</button>
 				</div>
 			</div>	
 
 		</div>
-		<div class="posts row">
-			
-			
-			
-			
+
+		<div class="posts row">			
 			<div class="col-md-6 col-lg-6">
 				<article>
 					<div class="post_img card-blog-img">
