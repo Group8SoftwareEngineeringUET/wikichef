@@ -48,7 +48,9 @@
 		<div class="posts row">			
 			<div class="col-md-6 col-lg-6">
 				<article>
-					
+					<%result.forEach(function(data){ %>
+						<q><%=data%></q>
+					<% })%>
 					<div class="post_img card-blog-img">
 						<img src="../image/1.jpg" alt="Card image cap">
 					</div>

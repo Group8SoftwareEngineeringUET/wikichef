@@ -3,7 +3,7 @@ module.exports=function (urlencodedParser,app) {
 	app.set("views","../frontend/ejs/");
 	app.route("/wikichef/search")
 		.post(urlencodedParser, function(req,res){
-			var result=[];
+			var result=[1,2,3];
 			var key=req.body;
 			console.log(req.body);//req.body chua noi dung search
 			// can phai search trong database
