@@ -1,7 +1,7 @@
 module.exports=function (urlencodedParser,app) {
 	app.set("view engine","ejs");
 	app.set("views","../frontend/ejs/");
-	app.route("/wikichef/search")
+	app.route("/search")
 		.post(urlencodedParser, function(req,res){
 			var result=[1,2,3];
 			var key=req.body;

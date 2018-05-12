@@ -33,7 +33,7 @@
 		<div class="allpost row col-md-12">
 			
 			<div class="col-md-4">
-				<form method="post" class="search-form" action="/wikichef/search">
+				<form method="post" class="search-form" action="/search">
 				  <input  type="text" placeholder="Search.." name="search">
 				  <button type="submit"><i class="fa fa-search"></i></button>
 				</form>
@@ -87,7 +87,7 @@
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/wikichef/login" method="post">
+  <form class="modal-content animate" action="/login" method="post">
     <div class="container">
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
@@ -95,7 +95,7 @@
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
         
-      <button type="submit">Login</button>
+      <input type="submit">Login</input>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
@@ -106,10 +106,9 @@
 
 <div id="id02" class="modal">
   
-  <form class="modal-content animate" action="/wikichef/signup" method="post">
+  <form class="modal-content animate" action="/signup" method="post">
     <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      
 
 	  <label for="psw"><b>Email</b></label>
       <input type="text" placeholder="Email" name="email" required>

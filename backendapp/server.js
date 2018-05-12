@@ -9,7 +9,7 @@ app.listen(3000);
 app.set("view engine","ejs");
 app.set('views', __dirname + '../frontend/ejs/')
 app.use(express.static('../frontend/'))
-app.get("/wikichef/", function(req,res){
+app.get("/", function(req,res){
 	res.render("TrangChu");
 });	
 //var search= require("./search.js");
@@ -31,6 +31,6 @@ search(urlencodedParser,app);
 
 
 
-app.post("/wikichef/login", urlencodedParser, function(req,res){
+app.post("/login", urlencodedParser, function(req,res){
 	res.render("TrangChu");
 });
