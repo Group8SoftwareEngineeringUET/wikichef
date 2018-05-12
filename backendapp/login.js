@@ -6,9 +6,8 @@ module.exports=function (urlencodedParser,app) {
 			console.log(req.body);//req.body chua noi dung tu front
 			//Viet code o day
 			console.log(111111111111111111111111);
-
-			res.render('TrangChu');
+			//res.render('TrangChu');
 			
-			//res.redirect('http://localhost:3000/');
+			res.redirect('http://localhost:3000/');
 		});
 }

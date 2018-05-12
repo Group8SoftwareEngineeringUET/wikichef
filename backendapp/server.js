@@ -24,13 +24,14 @@ var urlencodedParser=bodyParser.urlencoded({extended:false});
 
 var search=require('./search.js');
 search(urlencodedParser,app);
-// login(urlencodedParser,app);
+
+var login=require('./login.js');
+login(urlencodedParser,app);
 // signup(urlencodedParser,app);
 // logout(urlencodedParser,app);
 // createPost(urlencodedParser,app);
 
 
 
-app.post("/login", urlencodedParser, function(req,res){
-	res.render("TrangChu");
-});
+
+
