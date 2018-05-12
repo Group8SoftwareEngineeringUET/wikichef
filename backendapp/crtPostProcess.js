@@ -1,11 +1,11 @@
 module.exports=function (urlencodedParser,app) {
 	app.set("view engine","ejs");
 	app.set("views","../frontend/ejs/");
-	app.route("/createPost/process")
+	app.route("/createPostProcess")
 		.post(urlencodedParser, function(req,res){
+			console.log(req.body);
 			
 			
-			
-			res.redirect("/view/IDpost");
+			//res.redirect("/view/IDpost");
 		});
 }

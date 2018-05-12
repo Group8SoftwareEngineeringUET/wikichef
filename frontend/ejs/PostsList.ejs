@@ -14,12 +14,16 @@
 	<section id="header">
 		<div class="row col-md-12">
 			<div class="col-md-3">
-				<p class=""></p>
+				<p class="">Blog</p>
 			</div>
 			<div class="col-md-6">
 				<p class="wikichef">Wiki chef</p>
 			</div>
-			
+			<div class="col-md-3">
+				<a href="#"><i class="fa fa-twitter"></i></a> 
+				<a href="#"><i class="fa fa-linkedin"></i></a> 
+				<a href="#"><i class="fa fa-facebook"></i></a> 
+			</div>
 		</div>	
 	</section>
 	<section id="banner">		
@@ -29,7 +33,9 @@
 		<div class="allpost row col-md-12">
 			
 			<div class="col-md-4">
-				<form method="post" class="search-form" action="/wikichef/search">
+
+				<form method="get" class="search-form" action="/search">
+
 				  <input  type="text" placeholder="Search.." name="search">
 				  <button type="submit"><i class="fa fa-search"></i></button>
 				</form>
@@ -48,9 +54,6 @@
 		<div class="posts row">			
 			<div class="col-md-6 col-lg-6">
 				<article>
-					<%result.forEach(function(data){ %>
-						<q><%=data%></q>
-					<% })%>
 					<div class="post_img card-blog-img">
 						<img src="../image/1.jpg" alt="Card image cap">
 					</div>
@@ -86,10 +89,10 @@
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/wikichef/login" method="post">
+  <form class="modal-content animate" action="/login" method="post">
     <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
 
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
@@ -105,12 +108,11 @@
 
 <div id="id02" class="modal">
   
-  <form class="modal-content animate" action="/wikichef/signup" method="post">
+  <form class="modal-content animate" action="/signup" method="post">
     <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
 
-	  <label for="psw"><b>Email</b></label>
+	  <label for="email"><b>Email</b></label>
+
       <input type="text" placeholder="Email" name="email" required>
       <br></br>
       <label for="psw"><b>Password</b></label>

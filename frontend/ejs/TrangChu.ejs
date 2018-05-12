@@ -32,7 +32,7 @@
 	<section id="blog">
 		<div class="allpost row col-md-12">
 			
-			<div class="col-md-4">
+			<div class="col-md-5">
 
 				<form method="get" class="search-form" action="/search">
 
@@ -42,7 +42,7 @@
 			</div>
 
 
-			<div class="col-md-2">
+			<div class="col-md-4">
 				<div class="btlogin">
 					<button class="login" onclick="document.getElementById('id01').style.display='block'">Login</button>
 					<button class="signup" onclick="document.getElementById('id02').style.display='block'">Signup</button>
@@ -52,37 +52,25 @@
 		</div>
 
 		<div class="posts row">			
-			<div class="col-md-6 col-lg-6">
-				<article>
-					<div class="post_img card-blog-img">
-						<img src="../image/1.jpg" alt="Card image cap">
-					</div>
-					<div class="author row">
-						<div class="img-author">
-							<img src="../image/1.jpg">
-						</div>
-						<div class="post_meta_top">
-							<div class="author-name">
-								<p>Thang Huu Nguyen</p>
-							</div>
-							<span class="post_meta_date">Nov 17, 2020</span>
-							<span class="post_meta_time">2 min</span>
-						</div>
-					</div>
+			<div class="col-md-8 col-lg-8">
+				<article>					
 					<div class="card-blog-content row">
 						<h5 class="post_title">
 							<a href="blog-single-post.html">Web Is Bound To Make An Impact In Your Business
 							</a>
 						</h5>
-						
-						<div class="post_content">
-							<p>Lorem ipsum dolor sit amet, nam saepe tibique no, Efficiantur consequuntur et nec. Cum
-								ei omittam repudiare evertitur.</p>
+					</div>
+					<div class="author row">					
+						<div class="post_meta_top">
+							<div class="author-name">
+								<p>Thang Huu Nguyen</p>
+							</div>
 						</div>
 					</div>
 				</article>
 			</div>
 		</div>
+
 	</section>
 </body>
 </html>
@@ -92,12 +80,12 @@
   <form class="modal-content animate" action="/login" method="post">
     <div class="container">
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Username" name="email" required>
+      <input type="text" placeholder="Enter Email" name="email" required>
 
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
         
-      <input type="submit">Login</input>
+      <button type="submit">Login</button>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">

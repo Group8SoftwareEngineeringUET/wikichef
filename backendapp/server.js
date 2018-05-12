@@ -27,9 +27,12 @@ search(urlencodedParser,app);
 
 var login=require('./login.js');
 login(urlencodedParser,app);
-// signup(urlencodedParser,app);
+
+var signup=require('./signup.js');
+signup(urlencodedParser,app);
 // logout(urlencodedParser,app);
-// createPost(urlencodedParser,app);
+var createPost=require('./crtPost.js');
+createPost(urlencodedParser,app);
 
 
 

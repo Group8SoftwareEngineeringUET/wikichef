@@ -9,6 +9,6 @@ module.exports=function (urlencodedParser,app) {
 
 
 			
-			res.render("TrangChu");
+			res.redirect("/");
 		});
 }

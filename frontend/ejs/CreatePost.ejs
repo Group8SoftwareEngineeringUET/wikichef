@@ -13,7 +13,7 @@
 </html>
 
 
-<form action="/post", method="post">
+<form action="/createPostProcess", method="post">
 
   <h2>Dang bai</h2>
   <div class="input-container">
@@ -24,17 +24,22 @@
     <input class="input-field" type="text" placeholder="Mo ta chung" name="mtc">
   </div>
   <br></br>
+  <%i=0%>
   <div id="nl_sl" class="input-container">
-    <input class="input-field" type="text" placeholder="Nguyen lieu" name="nl">
-    <input class="input-field" type="text" placeholder="So luong" name="sl">
+    <input id="<%=i%>" class="input-field" type="text" placeholder="Nguyen lieu" name="nl">
+    <input id="<%=i%>" class="input-field" type="text" placeholder="So luong" name="sl">
+    <%i++%>
   </div>
-  <button type="button" class="add" name="add" onclick="addNlSl()">Them</button>
-  
+  <button type="button" id="nlsl" class="add" name="add" onclick="addNlSl()">Them</button>
+  <button type="button" id="nlsl" class="del" name="del" onclick="delNlSl()">Bo</button>
+  <%j=0%>
   <div id="bl" class="input-container">
     <p>Buoc 1 </p>
-    <input class="input-field" type="text" placeholder="Buoc lam" name="buoc">
+    <input id="<%=j%>" class="input-field" type="text" placeholder="Buoc lam" name="buoc">
+    <%j++%>
   </div>
-  <button type="button" class="add" onclick="addBl()">Them</button>
+  <button type="button" id="bl" class="add" onclick="addBl()">Them</button>
+  <button type="button" id="bl" class="del" onclick="delBl()">Bo</button>
   <br></br>
   <button type="submit" class="btn">Xong</button>
 </form>
@@ -56,6 +61,17 @@
     phanTuChon.append("<br>");
     phanTuChon.append('<input class="input-field" type="text" placeholder="Buoc lam" name="buoc">');
    // phanTuChon.append(' <button type="button" class="add" onclick="addBl()">Them</button> ')
+  function delNlSl() {
+    var phanTuChon = $("#nl_sl");
+    phanTuChon.remove();
+   }
+
+  $(document).ready(function(){
+      $("nlsl").click(function(){
+          $("#<%=i%>").remove();
+          <% i-- %>
+      })
+  })
   }
 </script>
 </body>
