@@ -8,7 +8,7 @@ module.exports = function (urlencodedParser,app) {
 		.post(urlencodedParser, function(req,res){
 			console.log(req.body);//req.body chua noi dung tu front
 			//Viet code o day
-			if (req.body.email != null || req.body.psw != null) {
+			if (req.body.email != null && req.body.psw != null) {
 				var con = mysql.createConnection({
   					host: "localhost",
   					user: "root",
