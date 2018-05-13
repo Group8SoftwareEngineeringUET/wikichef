@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -145,4 +146,148 @@ window.onclick = function(event) {
         modal2.style.display = "none";
     }
 }
+=======
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wiki Chef</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="../css/food.css">
+<link rel="stylesheet" type="text/css" href="../css/login.css">
+<link rel="stylesheet" type="text/css" href="../css/search.css">
+</head>
+<body> 
+<div class="container">
+	<section id="header">
+		<div class="row col-md-12">
+			<div class="col-md-3">
+				<p class="">Blog</p>
+			</div>
+			<div class="col-md-6">
+				<p class="wikichef">Wiki chef</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#"><i class="fa fa-twitter"></i></a> 
+				<a href="#"><i class="fa fa-linkedin"></i></a> 
+				<a href="#"><i class="fa fa-facebook"></i></a> 
+			</div>
+		</div>	
+	</section>
+	<section id="banner">		
+		<img class="img-banner col-md-12" src="../image/1.jpg">		
+	</section>
+	<section id="blog">
+		<div class="allpost row col-md-12">
+			
+			<div class="col-md-4">
+				<form method="get" class="search-form" action="/search">
+				  <input  type="text" placeholder="Search.." name="search" required>
+				  <button type="submit"><i class="fa fa-search"></i></button>
+				</form>
+			</div>
+
+
+			<div class="col-md-2">
+				<div class="btlogin">
+					<button class="login" onclick="document.getElementById('id01').style.display='block'">Login</button>
+					<button class="signup" onclick="document.getElementById('id02').style.display='block'">Signup</button>
+				</div>
+			</div>	
+
+		</div>
+
+		<div class="posts row">			
+			<div class="col-md-6 col-lg-6">
+				<article>
+					<div class="post_img card-blog-img">
+						<img src="../image/1.jpg" alt="Card image cap">
+					</div>
+					<div class="author row">
+						<div class="img-author">
+							<img src="../image/1.jpg">
+						</div>
+						<div class="post_meta_top">
+							<div class="author-name">
+								<p>Thang Huu Nguyen</p>
+							</div>
+							<span class="post_meta_date">Nov 17, 2020</span>
+							<span class="post_meta_time">2 min</span>
+						</div>
+					</div>
+					<div class="card-blog-content row">
+						<h5 class="post_title">
+							<a href="<%= link%>">Web Is Bound To Make An Impact In Your Business
+							</a>
+						</h5>
+						
+						<div class="post_content">
+							<p>Lorem ipsum dolor sit amet, nam saepe tibique no, Efficiantur consequuntur et nec. Cum
+								ei omittam repudiare evertitur.</p>
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="./login" method="post">
+    <div class="container">
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Username" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="./signup" method="post">
+    <div class="container">
+	  <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Email" name="email" required>
+      <br></br>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      
+      <label for="psw"><b>Nhap lai Password</b></label>
+      <input type="password" placeholder="Enter Password" name="rpsw" required>
+	  <br></br>      
+      <button type="submit">Signup</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+var modal2 = document.getElementById('id02');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
+}
+>>>>>>> 1820458f8413dcdc658c156f1009559459f911ca
 </script>

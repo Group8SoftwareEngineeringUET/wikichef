@@ -51,10 +51,24 @@
 			</div>	
 
 		</div>
-			post.forEach(i){
 
-			}
-		
+				<h3>data.NamePost</h3>
+				<p>data.Description</p>
+				<p>----------------</p>
+				
+				<% for(var i=0;i <= data.ingre.length();i++){ %>
+					<p><%=data.ingre[i]%>: <%=data.amt[i]%></p>
+				<%}%>
+				var i=0;
+				<%data.step.forEach(item){%>
+					<p>Buoc <%=i%></p>
+					<%i++%>
+					<p>----------</p>
+					<p><%=item%></p>
+					
+				}
+				<p>Rate: <%=data.Rating%></p>
+				<p>Like: <%=data.Like%></p>
 	</section>
 </body>
 </html>
