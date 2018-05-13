@@ -1,18 +1,71 @@
 var mysql = require('mysql');
 var Account = require('./model/account');
+var LocalStrategy = require('passport-local').Strategy;
+var session = require('express-session');
 
-module.exports = function (urlencodedParser,app) {
+module.exports = function (urlencodedParser, Passport, app) {
 	app.set("view engine","ejs");
 	app.set("views","../frontend/ejs/");
+	app.use(urlencodedParser);
+	app.use(session({secret: 'mysecret'}));
+	app.use(Passport.initialize());
+	app.use(Passport.session());
 	app.route("/login")
-		.post(urlencodedParser, function(req,res){
-			console.log(req.body);//req.body chua noi dung tu front
-			//Viet code o day
-			if (req.body.email != null && req.body.psw != null) {
+		.post(Passport.authenticate('local', {failureRedirect: '/view/1', successRedirect: '/'}));
+	Passport.use(new LocalStrategy(
+				(email, psw, done) => {
+					console.log('......');
+					var con = mysql.createConnection({
+  					host: "localhost",
+  					user: "Lumeri",
+  					password: "linh7b2ltt",
+  					database: "mydb"
+					});
+					var statement = 'select * from account where User = "' + email+ '";';
+					
+					var resAccount = new Account();
+					con.connect(function(err) {
+						if (err) throw err;
+						con.query(statement, function(err, result){
+							if (err) throw err;
+							
+							if (result.length != 0 && psw == result[0].Pass) {
+								return done(null, result[0]);
+						} else {
+								return done(null, false);
+							}
+						})
+					})
+				}
+			))
+			Passport.serializeUser((user, done) => {
+				done(null, user.User);
+			})
+			Passport.deserializeUser((user, done) => {
 				var con = mysql.createConnection({
   					host: "localhost",
-  					user: "root",
-  					password: "linhcoi165",
+  					user: "Lumeri",
+  					password: "linh7b2ltt",
+  					database: "mydb"
+					});
+					var statement = 'select * from account where User = "' + user + '";';
+					con.connect(statement, function(err, result){
+						if (err) throw err;
+						if (result.length != 0) 
+							return done(null, result[0]);
+						else 
+							return done(null, false);
+					});
+			})
+	
+		/*.post(urlencodedParser, function(req,res){
+			console.log(req.body);//req.body chua noi dung tu front
+			//Viet code o day
+			
+				var con = mysql.createConnection({
+  					host: "localhost",
+  					user: "Lumeri",
+  					password: "linh7b2ltt",
   					database: "mydb"
 				});
 				var statement = 'select * from account where User = "' + req.body.email + '";';
@@ -34,7 +87,7 @@ module.exports = function (urlencodedParser,app) {
 						}
 					})
 				})
-			}			
-			res.redirect('http://localhost:3000');
-		});
+			}			*/
+			//res.redirect('http://localhost:3000');
+		//});
 }
