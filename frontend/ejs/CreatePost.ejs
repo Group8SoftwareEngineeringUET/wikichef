@@ -7,8 +7,9 @@
 
 </head>
 <body>
+<form action="/createPostProcess", method="post" role = "form" enctype="multlpart/form-data">
 
-<form action="/post", method="post">
+
   <h2>Dang bai</h2>
   <div class="input-container">
     <input class="input-field" type="text" placeholder="Ten mon an" name="tma">
@@ -17,6 +18,16 @@
   <div class="input-container">
     <input class="input-field" type="text" placeholder="Mo ta chung" name="mtc">
   </div>
+
+  <div class="form-group">
+    <label for="">Ảnh</label>
+    <input type="file" class = "form-control" id ="uploadfile" name = "uploadfile">   
+  </div>
+  
+
+    <!--button type="submit" class ="btn btn-primary">Submit</button-->
+
+
   <br></br>
   <div id="nl_sl" class="input-container">
     <input class="input-field" type="text" placeholder="Nguyen lieu" name="nl">

@@ -10,8 +10,26 @@ module.exports=function (urlencodedParser,app) {
 		});
 	app.route("/")
 		.get(function(req,res){
+			var mysql = require('mysql');
+			var con = mysql.createConnection({
+				host: "localhost",
+				user: "root",
+				password: "15101998",
+				database: "mydb"
+			});
+			var Post = require('./model/post.js');
+			var post = new Post();
+			con.connect(function(err){
+				if (err) throw err;
+				var statement = 'select * from post order by Rating desc';
+				console.log(statement);
+				con.query(statement, function(err, result){
+					if (err) throw err;
+					console.log(result);
+					res.render("TrangChu",{data: result});
+				});
+			});
+
 			
-			
-			res.render("TrangChu");
 		});
 }

@@ -9,18 +9,20 @@ module.exports = function(){
 			});
 		return con;
 	}*/
-	this.search = function(req, res, next) {
+	this.search = function(req, res) {
+		var myResult;
 		if (req.query.search.length > 0) {
 			var mysql = require('mysql');
 			var con = mysql.createConnection({
 				host: "localhost",
-				user: "Lumeri",
-				password: "linh7b2ltt",
+				user: "root",
+				password: "15101998",
 				database: "mydb"
 			});
 			con.connect(function(err){
 				if (err) throw err;
 				var key = req.query.search.split(",");
+				console.log(key);
 				var statement = 'select * from Post where ';
 				for (var i = 0; i < key.length; i++){
 					key[i] = key[i].trim();
@@ -35,20 +37,24 @@ module.exports = function(){
 							s += result[i].NamePost + ',';
 						}
 						res.send(s);
+						myResult=result;
 					} else {
 						res.send("Not found!");
+						myResult=[1,2,3];
 					}
+					
 				})
 			})
 		}
+		return myResult=[1,2,3];
 	}
 	
 	this.view = function(req, res){
 		var mysql = require('mysql');
 			var con = mysql.createConnection({
 				host: "localhost",
-				user: "Lumeri",
-				password: "linh7b2ltt",
+				user: "root",
+				password: "15101998",
 				database: "mydb"
 			});
 		var Post = require('./model/post.js');
@@ -74,8 +80,8 @@ module.exports = function(){
 		var mysql = require('mysql');
 			var con = mysql.createConnection({
 				host: "localhost",
-				user: "Lumeri",
-				password: "linh7b2ltt",
+				user: "root",
+				password: "15101998",
 				database: "mydb"
 			});
 		con.connect(function(err){
@@ -101,8 +107,8 @@ module.exports = function(){
 		var mysql = require('mysql');
 			var con = mysql.createConnection({
 				host: "localhost",
-				user: "Lumeri",
-				password: "linh7b2ltt",
+				user: "root",
+				password: "15101998",
 				database: "mydb"
 			});
 		con.connect(function(err){

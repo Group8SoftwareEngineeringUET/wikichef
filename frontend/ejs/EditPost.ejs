@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+
+</head>
+<body>
+
+<form action="/edit/<%=data%>", method="post" role = "form" enctype="multlpart/form-data">
+
+
+  <h2>BANG SUA </h2>
+  <div class="input-container">
+    <input class="input-field" type="text" placeholder="Ten mon an" name="tma" value="<%=data.tma%>">
+  </div>
+
+  <div class="input-container">
+    <input class="input-field" type="text" placeholder="Mo ta chung" name="mtc"value="<%=data.mtc%>">
+  </div>
+
+  <div class="form-group">
+    <label for="">Ảnh</label>
+    <input type="file" class = "form-control" id ="uploadfile" name = "uploadfile">   
+  </div>
+  
+
+    <!--button type="submit" class ="btn btn-primary">Submit</button-->
+
+
+  <br></br>
+  <div id="nl_sl" class="input-container">
+    <input class="input-field" type="text" placeholder="Nguyen lieu" name="nl">
+    <input class="input-field" type="text" placeholder="So luong" name="sl">
+  </div>
+  <button type="button" class="add" name="add" onclick="addNlSl()">Them</button>
+  
+  <div id="bl" class="input-container">
+    <p>Buoc 1 </p>
+    <input class="input-field" type="text" placeholder="Buoc lam" name="buoc">
+  </div>
+  <button type="button" class="add" onclick="addBl()">Them</button>
+  <br></br>
+  <button type="submit" class="btn">Xong</button>
+</form>
+
+<script>
+  var i=1;
+  function addNlSl(){
+    var phanTuChon = $("#nl_sl");
+    phanTuChon.append("<br>");
+    phanTuChon.append( '<input class="input-field" type="text" placeholder="Nguyen lieu" name="nl"> ');
+    phanTuChon.append(' <input class="input-field" type="text" placeholder="So luong" name="sl"> ');
+   // phanTuChon.append(' <button type="button" class="add" name="add" onclick="addNlSl()">Them</button>');
+    }
+  function addBl(){
+    i++;
+    var phanTuChon=$("#bl");
+    phanTuChon.append("<br>");
+    phanTuChon.append("Buoc "+i);
+    phanTuChon.append("<br>");
+    phanTuChon.append('<input class="input-field" type="text" placeholder="Buoc lam" name="buoc">');
+   // phanTuChon.append(' <button type="button" class="add" onclick="addBl()">Them</button> ')
+  }
+</script>
+</body>
+</html>
