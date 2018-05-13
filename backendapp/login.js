@@ -4,7 +4,7 @@ var Account = require('./model/account');
 module.exports = function (urlencodedParser,app) {
 	app.set("view engine","ejs");
 	app.set("views","../frontend/ejs/");
-	app.route("/wikichef/login")
+	app.route("/login")
 		.post(urlencodedParser, function(req,res){
 			console.log(req.body);//req.body chua noi dung tu front
 			//Viet code o day
