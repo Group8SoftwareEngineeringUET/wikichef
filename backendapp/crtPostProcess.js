@@ -6,6 +6,6 @@ module.exports=function (urlencodedParser,app) {
 			console.log(req.body);
 			
 			
-			//res.redirect("/view/IDpost");
+			res.redirect("/view/:IDpost");
 		});
 }

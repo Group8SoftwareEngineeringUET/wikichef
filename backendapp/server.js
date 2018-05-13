@@ -9,9 +9,8 @@ app.listen(3000);
 app.set("view engine","ejs");
 app.set('views', __dirname + '../frontend/ejs/')
 app.use(express.static('../frontend/'))
-app.get("/", function(req,res){
-	res.render("TrangChu");
-});	
+
+
 //var search= require("./search.js");
 var bodyParser = require('body-parser');
 var urlencodedParser=bodyParser.urlencoded({extended:false});
@@ -21,6 +20,10 @@ var urlencodedParser=bodyParser.urlencoded({extended:false});
 	res.render("PostsList.ejs");
 
 });*/
+
+
+var goHome = require('./goHome.js');
+goHome(urlencodedParser, app);
 
 var search=require('./search.js');
 search(urlencodedParser,app);
@@ -34,7 +37,8 @@ signup(urlencodedParser,app);
 var createPost=require('./crtPost.js');
 createPost(urlencodedParser,app);
 
-
+var createPostProcess=require('./crtPostProcess.js');
+createPostProcess(urlencodedParser,app);
 
 
 

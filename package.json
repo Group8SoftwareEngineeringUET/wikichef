@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Group8SoftwareEngineeringUET/wikichef/issues"
   },
-  "homepage": "https://github.com/Group8SoftwareEngineeringUET/wikichef#readme"
+  "homepage": "https://github.com/Group8SoftwareEngineeringUET/wikichef#readme",
+  "dependencies": {
+    "passport": "^0.4.0"
+  }
 }
