@@ -52,21 +52,17 @@
 
 		</div>
 
-				<h3>data.NamePost</h3>
-				<p>data.Description</p>
+				<h3><%= data.NamePost%></h3>
+				<p><%=data.Description%></p>
 				<p>----------------</p>
 				
-				<% for(var i=0;i <= data.ingre.length();i++){ %>
+				<% for(var i=0;i < data.ingre.length;i++){ %>
 					<p><%=data.ingre[i]%>: <%=data.amt[i]%></p>
+				<% } %>
+				<%for (var i = 1; i <= data.step.length; i++) {%>
+					<p> Step <%= i%> </p>
+					<p><%= data.step[i-1]%></p>
 				<%}%>
-				<% var i=0;%>
-				<%data.step.forEach(item){%>
-					<p>Buoc <%=i%></p>
-					<%i++%>
-					<p>----------</p>
-					<p><%=item%></p>
-					
-				}
 				<p>Rate: <%=data.Rating%></p>
 				<p>Like: <%=data.Like%></p>
 	</section>

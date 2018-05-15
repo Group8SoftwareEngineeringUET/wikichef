@@ -2,7 +2,7 @@ module.exports=function (urlencodedParser,app) {
 	app.set("view engine","ejs");
 	app.set("views","../frontend/ejs/");
 	app.route("/PostsList")
-		.get(urlencodedParser, function(req,res){
+		.get(function(req,res){
 			var mysql = require('mysql');
 
 			var conn = mysql.createConnection({
@@ -22,7 +22,7 @@ module.exports=function (urlencodedParser,app) {
 					conn.query(sql, function (err,result) {
 						if (err) throw err;
 					//	console.log("truy xuat thanh cong");
-					//	console.log(result);
+						console.log(result+"ddddddddddddddddd");
 						res.render("PostsList",{data:result});
 					});
 				});

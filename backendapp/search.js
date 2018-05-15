@@ -35,6 +35,7 @@ module.exports=function (urlencodedParser,app) {
 								//console.log(myResult);
 							} else {
 								//res.send("Not found!");
+								res.render("PostsList",{data: []});
 							}
 						})
 					})
